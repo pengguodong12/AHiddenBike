@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, BTClient!</string>
+    <string name="app_name">BTClient</string>
+    <string name="led_on">亮灯</string>
+    <string name="buzz_on">发声</string>
+    <string name="led_off">关灯</string>
+    <string name="buzz_off">关声</string>
+    <string name="select_device">更改连接</string>
+    <string name="connect">连接</string>
+</resources>
