@@ -28,7 +28,7 @@ unsigned char buffer;
 //蓝牙异步串口通信初始化
 void USCIA0_init(void);
 
-// 时钟源初始化
+// 时钟源初始化，并设置低电压警示
 void CLK_init(void);
 
 //TA0初始化，并开始计数
@@ -98,10 +98,21 @@ int main( void )
 //蓝牙接收数据中断
 #pragma vector=USCIAB0RX_VECTOR
 __interrupt void UCA0RX_isr(void) {
+	unsigned char i;
 	IE2 &=~UCA0RXIE;		//关闭接收中断
 	buffer = UCA0RXBUF;		//接收一个字符并保存
 	display(buffer);		//数码管显示接收的蓝牙消息
-		
+	
+/*	//低电压检测
+	if ((SVSCTL & BIT0)!=0) {
+		for (i=0;i=5;i++) {		//低电压警报，闪灯5次
+			P1OUT &= ~(BIT5+BIT6);
+			delay(1);
+			P1OUT |= (BIT5+BIT6);
+			delay(1);
+		}
+	}
+*/	
 	switch (buffer) 		//根据接收的不同消息进行不同操作
 	{
 	case 1:          	//亮灯
@@ -158,7 +169,7 @@ __interrupt void WDT_isr(void) {
 	IFG1 &= ~BIT0;			//中断标志清零
 }
 
-// 时钟源初始化
+// 时钟源初始化，并设置低电压警示
 void CLK_init(void) {
 	//设置DCO的频率，SMCLK的时钟源默认为DCO
     BCSCTL1=CALBC1_12MHZ;
@@ -166,6 +177,8 @@ void CLK_init(void) {
 	
 	BCSCTL3 |= LFXT1S_2;    //ACLK选择12kHZ的VLOCLK
 	BCSCTL1 |= DIVA_3;		//ACLK 8分频，即1500Hz
+	
+/*	SVSCTL = 0x70;			//设置2.65V的低电压警报*/
 }
 
 //蓝牙异步串口初始化
