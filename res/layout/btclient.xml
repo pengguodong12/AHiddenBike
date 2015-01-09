@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="fill"
+    android:background="#1F2730"
+    android:gravity="fill"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    android:weightSum="10" >
+
+		<com.example.ahiddenbike.LocationView
+		    android:id="@+id/mLocationView"
+		    android:layout_width="match_parent"
+		    android:layout_height="0dp"
+		    android:layout_centerInParent="true"
+		    android:layout_gravity="top|center_horizontal"
+		    android:layout_margin="3dp"
+		    android:layout_weight="6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="fill"
+            android:layout_weight="2"
+            android:gravity="fill"
+            android:orientation="horizontal"
+            android:showDividers="middle" >
+
+       	<Button
+       	    android:id="@+id/button_led"
+       	    android:layout_width="match_parent"
+       	    android:layout_height="match_parent"
+       	    android:layout_gravity="center"
+       	    android:layout_margin="3dp"
+       	    android:layout_weight="1"
+       	    android:background="#00A1E0"
+       	    android:onClick="onLedButtonClicked"
+       	    android:text="@string/led_on"
+       	    android:textColor="@color/white"
+       	    android:textSize="36sp" >
+
+		</Button>
+
+		<Button
+		    android:id="@+id/button_buzz"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_gravity="center"
+		    android:layout_margin="3dp"
+		    android:layout_weight="1"
+		    android:background="#00A1E0"
+		    android:onClick="onBuzzButtonClicked"
+		    android:text="@string/buzz_on"
+		    android:textColor="@color/white"
+		    android:textSize="36sp" >
+
+		</Button>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="2"
+            android:gravity="bottom"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button_select_device"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="#FA364A"
+                android:onClick="onConnectButtonClicked"
+                android:text="@string/connect"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                android:typeface="serif" />
+
+        </LinearLayout>
+
+</LinearLayout>

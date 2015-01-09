@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+    <TextView 
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="all" 
+        android:text="上网看看演示视频：
+        http://www.baidu.com"
+        />
+     
+<TextView  
+    android:id="@+id/text_view" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:textSize="16sp" 
+    android:textColor="#ffffff" 
+	android:padding="10dip"
+	android:background="#cc0000"
+    android:text="我是使用说明啊，此处省去1000字"
+    />
+    
+</LinearLayout>
+    
+
