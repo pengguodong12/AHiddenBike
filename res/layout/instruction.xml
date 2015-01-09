@@ -1,30 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-    
-    <TextView 
-        android:id="@+id/TextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoLink="all" 
-        android:text="上网看看演示视频：
-        http://www.baidu.com"
-        />
-     
+    android:layout_gravity="fill"
+    android:layout_margin="0dp"
+    android:gravity="fill"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="@color/bg"
+    android:weightSum="10" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="fill_horizontal|fill"
+        android:layout_margin="0dp"
+        android:layout_weight="2"
+        android:scaleType="fitStart"
+        android:src="@drawable/instruction_title" />
+
+
+
 <TextView  
     android:id="@+id/text_view" 
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:textSize="16sp" 
-    android:textColor="#ffffff" 
-	android:padding="10dip"
-	android:background="#cc0000"
-    android:text="我是使用说明啊，此处省去1000字"
-    />
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="fill_horizontal|fill"
+        android:layout_margin="0dp"
+        android:layout_weight="7"
+    	android:textColor="#ffffff" 
+		android:padding="12dip"
+		android:background="@color/bg"
+    	android:text="使用说明：\n
+1.在使用本软件前请先将手机与所要连接的蓝牙设备配对。\n
+2.进入主界面后按找车按钮可进行寻车操作。\n
+3.进入找车界面后请先点击连接按钮，并选择正确的设备进行连接。\n
+4.屏幕中央会显示自行车与自己当前所在位置的距离，可选择性地按响铃、亮灯按钮使硬件执行相关功能。\n\n
+注意事项：\n
+1.可在设置界面中对铃声分类进行设置。\n
+2.需要返回请使用手机右下角的返回键。\n
+3.发声和响铃均存在一定延时，请耐心等待。"
+    />        
+
     
+<TextView 
+     android:id="@+id/TextView1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="fill_horizontal|fill"
+        android:layout_margin="0dp"
+        android:layout_weight="1"
+     android:autoLink="all" 
+     android:text="我想上网看演示视频:       http://www.baidu.com"
+        />
+  
 </LinearLayout>
     
 
